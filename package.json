@@ -1,0 +1,28 @@
+{
+  "name": "multer",
+  "version": "1.0.0",
+  "description": "This code is open source explain how to upload picter using package multer",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hocineimail/Upload-image-multer.git"
+  },
+  "author": "HOCINE ismail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hocineimail/Upload-image-multer/issues"
+  },
+  "homepage": "https://github.com/hocineimail/Upload-image-multer#readme"
+}
