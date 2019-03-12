@@ -41,6 +41,14 @@ function checkFileType(file, cb){
 }
 
 // Init server
+server.use(bodyParser.urlencoded({ extended: false }))
+server.use(bodyParser.json())
+
+//using folder views
+server.use(express.static(__dirname + '/public'))
+server.engine('ejs', require('ejs').renderFile)
+server.set('views', path.join(__dirname, 'views'))
+server.set('view engine', 'ejs')
 
 
 
@@ -48,12 +56,15 @@ server.get('/', (req, res) =>
   res.render('index')
   );
 
-server.post('/Post', (req, res) => {
+server.post('/PostPicter', (req, res) => {
+
+  console.log(req.body.Picter)
+
+  console.log("routes")
   upload(req, res, (err) => {
     if(err){
-      res.render('index', {
-        msg: err
-      });
+      res.render('index');
+       console.log('Error: of Uploading')
     } else {
       if(req.file == undefined){
           console.log('Error: No File Selected!')
@@ -70,14 +81,6 @@ server.post('/Post', (req, res) => {
 });
 
 
-server.use(bodyParser.urlencoded({ extended: false }))
-server.use(bodyParser.json())
-
-//using folder views
-server.use(express.static(__dirname + '/public'))
-server.engine('ejs', require('ejs').renderFile)
-server.set('views', path.join(__dirname, 'views'))
-server.set('view engine', 'ejs')
 
 
 server.listen(3000, () => {
