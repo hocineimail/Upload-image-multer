@@ -1,5 +1,5 @@
 
-# Uploads file using package multer
+# Uploads file using p multer
 
 An example of how to upload images locally with Node.js express and Multer.
 
